@@ -20,6 +20,6 @@
 ✅ 19. ~/playground/canada/quebec/montreal.txt exists
 ✅ 20. ~/playground/canada/quebec/quebec-city.txt exists
 ✅ 21. ~/playground/canada/british columbia/vancouver.txt exists
-❗️ 22. ~/playground/canada/british columbia/prince-george.txt does not exist
+✅ 22. ~/playground/canada/british columbia/prince-george.txt exists
 
-21/22 tests pass
+22/22 tests pass
