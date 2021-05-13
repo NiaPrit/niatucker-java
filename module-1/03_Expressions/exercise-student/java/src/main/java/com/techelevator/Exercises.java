@@ -3,6 +3,8 @@ package com.techelevator;
 public class Exercises {
 
 	/*
+	.
+	 /*
 	 1. The parameter weekday is true if it is a weekday, and the parameter vacation is true if we are on
 	 vacation. We sleep in if it is not a weekday or we're on vacation. Return true if we sleep in.
 	 sleepIn(false, false) → true
@@ -121,9 +123,22 @@ public class Exercises {
 	 posNeg(-4, -5, true) → true
 	 */
 	public boolean posNeg(int a, int b, boolean negative) {
-		return false;
-	}
 
+
+		if ( negative ) {
+			if ( a < 0 && b < 0 ) {
+				return true;
+			}
+		}
+		else {
+			if ((a > 0 && b < 0) || (a < 0 && b > 0)) {
+				return true;
+			}
+
+		}
+			return false;
+
+	}
 	/*
 	 8. Return true if the given non-negative number is a multiple of 3 or a multiple of 5.
 	 (Hint: Think "mod".)
@@ -131,7 +146,12 @@ public class Exercises {
 	 or35(10) → true
 	 or35(8) → false
 	 */
-	public boolean or35(int n) {
+	public boolean or35(int n ) {
+
+		if( n % 3 == 0  ||  n % 5 == 0) {
+			return true;
+
+		}
 		return false;
 	}
 
@@ -235,7 +255,20 @@ public class Exercises {
 	 in3050(40, 50) → true
 	 */
 	public boolean in3050(int a, int b) {
-		return false;
+		//						a is between 30 and 40 inclusive
+		boolean aIsInRange1 = (a >= 30 && a <= 40) ;
+		boolean aIsInRange2 = (a >= 40 && a <= 50) ;
+		boolean bIsInRange1 = (b >= 30 && b <= 40) ;
+		boolean bIsInRange2 = (b >= 40 && b <= 50) ;
+
+		if (aIsInRange2 && bIsInRange2) {
+			return true;
+		}
+
+		 if (aIsInRange1 && bIsInRange1) {
+			return true;
+		}
+		else return false;
 	}
 
 	/*
@@ -269,8 +302,20 @@ public class Exercises {
 	 cigarParty(50, false) → true
 	 cigarParty(70, true) → true
 	 */
+
 	public boolean cigarParty(int cigars, boolean isWeekend) {
+		if (( isWeekend == true && cigars >= 40 )) {
+			return true;
+		}
+
+
+		if ((cigars >= 40 && cigars <= 60)) {
+			return true;
+		}
+
+
 		return false;
+
 	}
 
 	/*
@@ -297,6 +342,13 @@ public class Exercises {
 	 squirrelPlay(95, true) → true
 	 */
 	public boolean squirrelPlay(int temp, boolean isSummer) {
+		if( temp >= 60 && temp <= 90 ) {
+			return true;
+		}
+		if ( temp >= 60 && temp <= 100 && isSummer) {
+			return true;
+		}
+
 		return false;
 	}
 
