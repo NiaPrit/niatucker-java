@@ -457,7 +457,7 @@ public class Exercises {
 		int numberOfGuest = 7;
 		int croissantsPerGuest = totalCroissants / numberOfGuest;
 		System.out.println("Number of Croissants Per Guest : " + croissantsPerGuest);
-		
+
         /*
             CHALLENGE PROBLEMS
         */

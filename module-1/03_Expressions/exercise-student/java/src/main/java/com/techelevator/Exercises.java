@@ -9,7 +9,21 @@ public class Exercises {
 	 sleepIn(true, false) → false
 	 sleepIn(false, true) → true
 	 */
+
 	public boolean sleepIn(boolean weekday, boolean vacation) {
+
+		if (weekday == false && vacation == false) {
+			return true;
+		}
+		if (weekday == true && vacation == false) {
+			return false;
+		}
+		if (weekday == false && vacation == true) {
+			return true;
+		}
+		if (weekday == true && vacation == true) {
+			return true;
+		}
 		return false;
 	}
 
@@ -22,6 +36,19 @@ public class Exercises {
 	 monkeyTrouble(true, false) → false
 	 */
 	public boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
+		if (aSmile == true && bSmile == true) {
+			return true;
+		}
+		if (aSmile == false && bSmile == false) {
+			return true;
+		}
+		if (aSmile == true && bSmile == false) {
+			return false;
+		}
+		if (aSmile == false && bSmile == true) {
+			return false;
+		}
+
 		return false;
 	}
 
@@ -32,7 +59,13 @@ public class Exercises {
 	 sumDouble(2, 2) → 8
 	 */
 	public int sumDouble(int a, int b) {
-		return 0;
+		int sum = a + b;
+		if (a == b) {
+			sum = sum * 2;
+		}
+
+
+		return sum;
 	}
 
 	/*
@@ -45,7 +78,12 @@ public class Exercises {
 	 diff21(-10) → 31
 	 */
 	public int diff21(int n) {
-		return 0;
+		int diff = Math.abs(21 - n);
+		if (n > 21) {
+			diff = diff * 2;
+		}
+
+		return diff;
 	}
 
 	/*
@@ -57,8 +95,10 @@ public class Exercises {
 	 parrotTrouble(false, 6) → false
 	 */
 	public boolean parrotTrouble(boolean talking, int hour) {
-		return false;
+		boolean inTrouble = talking && (hour < 7 || hour > 20);
+		return inTrouble;
 	}
+
 
 	/*
 	 6. Given 2 ints, a and b, return true if one if them is 10 or if their sum is 10.
@@ -67,6 +107,9 @@ public class Exercises {
 	 makes10(1, 9) → true
 	 */
 	public boolean makes10(int a, int b) {
+		if ((a == 10 || b == 10) || (a + b == 10)) {
+			return true;
+		}
 		return false;
 	}
 
@@ -99,6 +142,9 @@ public class Exercises {
 	 icyHot(2, 120) → false
 	 */
 	public boolean icyHot(int temp1, int temp2) {
+		if (temp1 < 0 && temp2 > 100 || temp1 > 100 && temp2 < 0) {
+			return true;
+		}
 		return false;
 	}
 
@@ -109,6 +155,12 @@ public class Exercises {
 	 in1020(8, 99) → false
 	 */
 	public boolean in1020(int a, int b) {
+		if ((a >= 10) && (a <= 20)) {
+			return true;
+		}
+		if ((b >= 10) && (b <= 20)) {
+			return true;
+		}
 		return false;
 	}
 
@@ -120,9 +172,17 @@ public class Exercises {
 	 hasTeen(20, 10, 13) → true
 	 */
 	public boolean hasTeen(int a, int b, int c) {
-		return false;
-	}
-
+		if ((a >= 13) && (a <= 19)) {
+			return true;
+		}
+		if ((b >= 13) && (b <= 19)) {
+			return true;
+		}
+		if ((c >= 13) && (c <= 19)) {
+			return true;
+		}
+	return false;
+}
 	/*
 	 12. We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 2 int values,
 	 return true if one or the other is teen, but not both.
@@ -130,10 +190,22 @@ public class Exercises {
 	 loneTeen(21, 19) → true
 	 loneTeen(13, 13) → false
 	 */
-	public boolean loneTeen(int a, int b) {
-		return false;
+	public boolean loneTeen(int a, int b)
+	{
+		{
+			if ((a >= 13 && a <= 19) && (b >= 13 && b <= 19))
+			{
+				return false;
+			}
+		}
+		if ((a >= 13 && a <= 19) || (b >= 13 && b <= 19))
+			{
+			return true;
+			}
+		{
+			return false;
+		}
 	}
-
 	/*
 	 13. Given three int values, a b c, return the largest.
 	 intMax(1, 2, 3) → 3
@@ -141,9 +213,20 @@ public class Exercises {
 	 intMax(3, 2, 1) → 3
 	 */
 	public int intMax(int a, int b, int c) {
-		return 0;
-	}
+		if ((a >= b) && (a >= c)) {
+			return a;
+		}
 
+		if ((b >= a) && (b >= c)) {
+			return b;
+		}
+		if ((c >= a) && (c >= b)) {
+			return c;
+		}
+		{
+			return 0;
+		}
+	}
 	/*
 	 14. Given 2 int values, return true if they are both in the range 30..40 inclusive, or they are both
 	 in the range 40..50 inclusive.
@@ -163,8 +246,19 @@ public class Exercises {
 	 max1020(11, 9) → 11
 	 */
 	public int max1020(int a, int b) {
+		if ((a >= 10 && a <= 20) && (b >=10 && b <=20))
+		{
+		return Math.max(a,b);
+	    }
+		if ((a >= 10 && a <=20) && (b <10 || b > 20)) {
+		return a;
+		}
+
+		if ((b >= 10 && b <=20) && ( a <10 || a > 20)) {
+			return b;
+		}
 		return 0;
-	}
+		}
 
 	/*
 	 16. When squirrels get together for a party, they like to have cigars. A squirrel party is successful
@@ -251,7 +345,19 @@ public class Exercises {
 	 alarmClock(0, false) → "10:00"
 	 */
 	public String alarmClock(int day, boolean vacation) {
-		return "";
+		boolean isWeekday = day >= 1 && day <= 5;
+		if (vacation) {
+			if (isWeekday)
+				return "10:00";
+			else
+				return "off";
+		} else
+			{
+			if (isWeekday)
+				return "7:00";
+			else
+				return "10:00";
+		}
 	}
 
 	/*
