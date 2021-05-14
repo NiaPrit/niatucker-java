@@ -54,7 +54,7 @@ public class RoundingExample
         /*
          * The DecimalFormat class can be used to define an object containing how a numeric value
          * should be formatted.
-         *
+         *0.
          * The object can then be used with the format() method to format a value
          *
          * You must import the java.text.DecimalFormat class to use DecimalFormat

@@ -157,7 +157,9 @@ public class Exercises {
 	public int countEvens(int[] nums) {
 		return 0;
 	}
-
+    // define a variable to hold a sun to be returned
+	// loop through the array one element at a time adding to sum
+	//check for empty array
 	/*
 	 12. Return the sum of the numbers in the array, returning 0 for an empty array. Except the number 
 	 13 is very unlucky, so it does not count and numbers that come immediately after a 13 also do 
@@ -169,8 +171,23 @@ public class Exercises {
 	 sum13([1, 2, 2, 1, 13, 3, 4]) → 10
 	 */
 	public int sum13(int[] nums) {
-		return 0;
+		int sum = 0;
+		if (nums.length == 0 ) {
+			return 0;
+		}
+
+		for (int i=0; i < nums.length; i++) {
+			if (nums[i] == 13) {
+				continue;
+			} else {
+				i++;
+				sum = sum + nums[i];
+			}
+		}
+		return sum;
 	}
+	
+
 
 	/*
 	 13. Given an array of ints, return true if the array contains a 2 next to a 2 somewhere.
