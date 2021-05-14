@@ -47,8 +47,8 @@ public class RoundingExample
          */
 
         // Use printf() to display moneyFound with 2 rounded decimal places
-
-        System.out.printf("moneyFound with formatting via printf: %.2f\n", moneyFound);
+        //                         %.2f - placeholder for a value          value-for-the-placeholder
+        System.out.printf("\nHi Anthony!\nmoneyFound with formatting via printf:%.2f\n", moneyFound);
 
         System.out.println("-------------------------------------------------------");
         /*
