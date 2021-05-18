@@ -174,21 +174,6 @@ public class Exercises {
 	 sum13([1, 2, 2, 1, 13, 3, 4]) → 10
 	 */
 	public int sum13(int[] nums) {
-<<<<<<< HEAD
-		int sum = 0;
-		if (nums.length == 0 ) {
-			return 0;
-		}
-
-		for (int i=0; i < nums.length; i++) {
-			if (nums[i] == 13) {
-				continue;
-			} else {
-				i++;
-				sum = sum + nums[i];
-			}
-		}
-=======
 
 		int sum = 0;  // define a variable to hold the sum to be returned
 
@@ -204,7 +189,6 @@ public class Exercises {
 			}
 		}
 
->>>>>>> 854d29ea36e942f31707e9b05025ab2b62109134
 		return sum;
 	}
 	

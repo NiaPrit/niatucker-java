@@ -9,8 +9,10 @@ public class Exercises {
 	 helloName("X") → "Hello X!"
 	 */
 	public String helloName(String name) {
-		return null;
+
+		return "Hello " + name + "!";
 	}
+
 
 	/*
 	 Given two strings, a and b, return the result of putting them together in the order abba,
@@ -20,10 +22,18 @@ public class Exercises {
 	 makeAbba("What", "Up") → "WhatUpUpWhat"
 	 */
 	public String makeAbba(String a, String b) {
-		return null;
+
+		return a + b + b + a;
 	}
 
+
 	/*
+
+
+
+
+
+
 	 The web is built with HTML strings like "<i>Yay</i>" which draws Yay as italic text. In this example,
 	 the "i" tag makes <i> and </i> which surround the word "Yay". Given tag and word strings, create the
 	 HTML string with tags around the word, e.g. "<i>Yay</i>".
@@ -32,7 +42,9 @@ public class Exercises {
 	 makeTags("cite", "Yay") → "<cite>Yay</cite>"
 	 */
 	public String makeTags(String tag, String word) {
-		return null;
+
+
+		return "<" + tag + ">" + word + "</" + tag + ">";
 	}
 
 	/*
@@ -44,7 +56,8 @@ public class Exercises {
 	 makeOutWord("[[]]", "word") → "[[word]]"
 	 */
 	public String makeOutWord(String out, String word) {
-		return null;
+
+		return out.substring (0,2) + word + out.substring(2) ;
 	}
 
 	/*
@@ -55,7 +68,8 @@ public class Exercises {
 	 extraEnd("Hi") → "HiHiHi"
 	 */
 	public String extraEnd(String str) {
-		return null;
+	int len = str.length();
+		return str.substring(len - 2) + str.substring(len -2) + str.substring(len -2);
 	}
 
 	/*
@@ -66,9 +80,14 @@ public class Exercises {
 	 firstTwo("abcdefg") → "ab"
 	 firstTwo("ab") → "ab"
 	 */
+
 	public String firstTwo(String str) {
-		return null;
+		if (str.length() <= 2) {
+			return str;
+		}
+		return str.substring(0,2);
 	}
+	//return string made of the first 2 chard (0,2)
 
 	/*
 	 Given a string of even length, return the first half. So the string "WooHoo" yields "Woo".
@@ -77,8 +96,11 @@ public class Exercises {
 	 firstHalf("abcdef") → "abc"
 	 */
 	public String firstHalf(String str) {
-		return null;
+
+		return str.substring(0,str.length() / 2);
 	}
+
+
 
 	/*
 	 Given a string, return a version without the first and last char, so "Hello" yields "ell".
@@ -88,7 +110,7 @@ public class Exercises {
 	 withoutEnd("coding") → "odin"
 	 */
 	public String withoutEnd(String str) {
-		return null;
+		return str.substring(1,str.length() - 1);
 	}
 
 	/*
@@ -100,9 +122,10 @@ public class Exercises {
 	 comboString("aaa", "b") → "baaab"
 	 */
 	public String comboString(String a, String b) {
-		return null;
-	}
-
+		if (a.length() > b.length() ) {
+			return b + a + b;
+		}
+		return a + b + a; }
 	/*
 	 Given 2 strings, return their concatenation, except omit the first char of each. The strings will
 	 be at least length 1.
@@ -111,7 +134,7 @@ public class Exercises {
 	 nonStart("shotl", "java") → "hotlava"
 	 */
 	public String nonStart(String a, String b) {
-		return null;
+		return a.substring(1) + b.substring(1);
 	}
 
 	/*
@@ -122,7 +145,7 @@ public class Exercises {
 	 left2("Hi") → "Hi"
 	 */
 	public String left2(String str) {
-		return null;
+		return str.substring(2) + str.substring(0,2);
 	}
 
 	/*
@@ -133,7 +156,8 @@ public class Exercises {
 	 right2("Hi") → "Hi"
 	 */
 	public String right2(String str) {
-		return null;
+		int begin = str.length()-2;
+		return str.substring(begin) + str.substring(0, begin);
 	}
 
 	/*
@@ -144,7 +168,12 @@ public class Exercises {
 	 theEnd("oh", true) → "o"
 	 */
 	public String theEnd(String str, boolean front) {
-		return null;
+		if (front) {
+			return str.substring (0,1);
+		} else {
+			return str.substring(str.length() -1);
+		}
+
 	}
 
 	/*
@@ -155,7 +184,10 @@ public class Exercises {
 	 withoutEnd2("ab") → ""
 	 */
 	public String withoutEnd2(String str) {
-		return null;
+		if (str.length() <= 2) {
+			return"";
+		}
+		return str.substring(1, str.length() - 1);
 	}
 
 	/*
@@ -166,7 +198,7 @@ public class Exercises {
 	 middleTwo("Practice") → "ct"
 	 */
 	public String middleTwo(String str) {
-		return null;
+		return str.substring(str.length() / 2-1,str.length() / 2 + 1);
 	}
 
 	/*

@@ -15,6 +15,11 @@ public class Lecture {
 
 		/* create an new instance of String using a literal */
 
+		String softDrink = "Diet Mtn Dew";
+		String beverage = softDrink + " by Pepsi ";
+		System.out.println(beverage);
+
+
 
 
 //--------------------------------------------------------------------------------------------------------		
@@ -40,7 +45,29 @@ public class Lecture {
 		 * .split(delimiter) - returns and array of strings containing the characters between the delimiter specified
 		 */
 
-//--------------------------------------------------------------------------------------------------------	
+
+
+
+
+
+
+		String name =  " HalyMcHalHal";
+		System.out.println("The varible name contains:" + name );
+		System.out.println(" The number of chars in name is: " + name.length());
+		System.out.println("The second char in name is : " + name.charAt (1));
+		System.out.println(" Does name start with Hal?" + name.startsWith("Hal"));
+		System.out.println("Does name start with J? " + name.startsWith("J"));
+
+
+		String person = "Guy Montag, Fire Fighter";
+		String [] words = person.split(" ");
+		for (int i=0; i< words.length; i++) {
+			System.out.println (" Word #" +i + " is: " + words[i]);
+
+		}
+
+//------------------------------------------------------------------------------------
+//--------------------
 		
 		/*   A String may also be created easily from an array of characters (char) */
 
