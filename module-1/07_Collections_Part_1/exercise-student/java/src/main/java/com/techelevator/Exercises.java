@@ -16,7 +16,11 @@ public class Exercises {
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"]
 	 */
 	public List<String> array2List(String[] stringArray) {
-		return null;
+		List<String> fruit = new ArrayList<String>();
+		for (String current : stringArray) {
+			fruit.add(current);
+		}
+		return fruit;
 	}
 
 	/*
@@ -26,7 +30,13 @@ public class Exercises {
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
 	public String[] list2Array(List<String> stringList) {
-		return null;
+
+		String[] Frank = new String[stringList.size()];// defined an array the same size of the list
+		// copy string list to Frank (array) one at a time
+		for (int i = 0; i < Frank.length; i++) {
+			Frank[i] = stringList.get(i);
+		}
+		return Frank;
 	}
 
 	/*
@@ -36,10 +46,19 @@ public class Exercises {
 	 no4LetterWords( {"Red", "White", "Blue"} )  ->  ["Red", "White"]
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
-	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
-	}
+	public List<String> no4LetterWords(String[] stringArray){
 
+	ArrayList<String> tech = new ArrayList<String>();
+		for(
+	int i = 0; i<stringArray.length;i++)
+		{
+		if (stringArray[i].length() != 4) {
+			tech.add(stringArray[i]);
+		} else {
+			continue; }
+		}
+		return tech;
+		}
 	/*
 	 Given an array of ints, divide each int by 2, and return an ArrayList of Doubles.
 	 arrayInt2ListDouble( {5, 8, 11, 200, 97} ) -> [2.5, 4.0, 5.5, 100, 48.5]
@@ -47,6 +66,10 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
+		//ArrayList<Double> twoDouble = new ArrayList<>();
+		//for (int i = 0; i < intArray.length; i++); {
+		//twoDouble.add(intArray [i] / 2.0);
+		//}
 		return null;
 	}
 
@@ -67,9 +90,14 @@ public class Exercises {
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]
 	 */
 	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
-	}
-
+		ArrayList<Integer> notEven = new ArrayList<>();
+		for (Integer currentInteger : integerArray) {
+			if (currentInteger % 2 != 0) {
+				notEven.add(currentInteger);
+			}
+			}
+			return notEven;
+		}
 	/*
 	 Given a List of Integers, and an int value, return true if the int value appears two or more times in
 	 the list.
