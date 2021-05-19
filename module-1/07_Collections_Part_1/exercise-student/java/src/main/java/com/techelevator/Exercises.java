@@ -80,7 +80,13 @@ public class Exercises {
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 64362
 	 */
 	public Integer findLargest(List<Integer> integerList) {
-		return null;
+		Integer largestFind = integerList.get(0);
+		for (Integer currentNumber : integerList) {
+			if (currentNumber > largestFind) {
+				largestFind = currentNumber;
+			}
+		}
+		return largestFind;
 	}
 
 	/*

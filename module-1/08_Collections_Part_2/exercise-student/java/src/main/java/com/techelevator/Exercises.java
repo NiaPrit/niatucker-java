@@ -1,6 +1,7 @@
 package com.techelevator;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class Exercises {
@@ -33,9 +34,41 @@ public class Exercises {
 	 * animalGroupName("elephants") -> "unknown"
 	 *
 	 */
+
+	// Associate an animal to a group name - use a Map
+	// key - animal - a String
+	// value - group name - a String
+
 	public String animalGroupName(String animalName) {
-		return null;
-	}
+		if (animalName == null) {
+			return "unknown";
+		}
+		String groupName = ""; //hold the value to be returned
+
+		Map<String, String> animals = new HashMap();
+		//we need to add the animals and their associated group names
+		//since the animal is supposed to be case insensitive
+		//pick a case we are using for the key
+
+
+		animals.put("giraffe", "Tower");
+		animals.put("elephant", "Herd");
+		animals.put("lion",     "Pride");
+		animals.put("crow", "Murder");
+		animals.put("pigeon", "Kit");
+		animals.put("deer", "Herd");
+		animals.put("crocodile", "Float");
+		animals.put("dog", "Pack");
+		animals.put("flamingo", "Pat");
+		groupName = animals.get(animalName.toLowerCase());
+		if (groupName == null) {
+			groupName = "unknown";
+		}
+		//Check to see if the animal name passed into the method is in our map
+		// if it is - set the groupName to the value from the Map from the animalName
+		//if its not - set the groupName to "unknown"
+
+		return groupName; }
 
 	/*
 	 * Given an String item number (a.k.a. SKU), return the discount percentage if the item is on sale.
