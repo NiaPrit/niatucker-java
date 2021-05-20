@@ -191,7 +191,15 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> wordCount(String[] words) {
-		return null;
+		Map<String, Integer> numberOfInstances = new HashMap();
+		for (String addToMap : words) {
+			if (numberOfInstances.containsKey(addToMap)) {
+				numberOfInstances.put(addToMap, (numberOfInstances.get(addToMap) + 1));
+			} else {
+				numberOfInstances.put(addToMap, 1);
+			}
+		}
+		return numberOfInstances;
 	}
 
 	/*
