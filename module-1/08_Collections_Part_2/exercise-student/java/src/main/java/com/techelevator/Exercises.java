@@ -93,8 +93,29 @@ public class Exercises {
 	 *
 	 */
 	public double isItOnSale(String itemNumber) {
-		return -1.0;
-	}
+
+		if (itemNumber == null) {
+			return 0.0;                        // if itemNumber is null we are returning zero (0.0)
+		}
+
+		Double percentageOff = 0.00;            //creating a double  to represent the value
+		Map<String, Double> promoCodes = new HashMap();  // created map promoCodes - holds all our data
+
+		        // key= itemNumber    Value = percentOff
+		promoCodes.put("KITCHEN4001", 0.20);
+		promoCodes.put("GARAGE1070", 0.15);
+		promoCodes.put("LIVINGROOM", 0.10);
+		promoCodes.put("KITCHEN6073", 0.40);
+		promoCodes.put("BEDROOM3434", 0.60);
+		promoCodes.put("BATH0073", 0.15);
+
+		percentageOff = promoCodes.get(itemNumber.toUpperCase());
+
+		if (percentageOff == null) {
+			 return 0.00;
+		}
+		return percentageOff; }
+
 
 	/*
 	 * Modify and return the given Map as follows: if "Peter" has more than 0 money, transfer half of it to "Paul",
@@ -107,7 +128,14 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
-		return null;
+		if (peterPaul.get("Peter") > 0 && peterPaul.get("Paul") < 1000) {
+			if ((peterPaul.get("Paul") & 2) == 0) {
+				peterPaul.put("Paul" , peterPaul.get("Paul") -1);
+			}
+			peterPaul.put("Paul", peterPaul.get("Paul") + peterPaul.get("Peter") - (peterPaul.get("Peter") / 2));
+			peterPaul.put("Peter", peterPaul.get("Peter") - (peterPaul.get("Peter") / 2));
+		}
+		return peterPaul;
 	}
 
 	/*
@@ -131,8 +159,23 @@ public class Exercises {
 	 * beginningAndEnding(["man", "moon", "main"]) → {"m": "n"}
 	 * beginningAndEnding(["muddy", "good", "moat", "good", "night"]) → {"g": "d", "m": "t", "n": "t"}
 	 */
+	// Got an array of none empty strings
+	// want to return a map with data types string, string DONE
+	// for every different string there is a key = to the first char (character)
+	// the car key is equal to the last Char in the string value
+	// we need to go through the array and for each string value
+
 	public Map<String, String> beginningAndEnding(String[] words) {
-		return null;
+
+		Map<String, String> wordsMap = new HashMap();  //creating a new map
+
+		String stringValue ="";
+
+		for(int i=0; i < words.length; i++) { // allows us to check each String value in the Array
+			stringValue = words[i];
+			wordsMap.put(stringValue.substring(0,1), stringValue.substring(stringValue.length()-1));
+			}
+		return wordsMap;
 	}
 
 	/*
