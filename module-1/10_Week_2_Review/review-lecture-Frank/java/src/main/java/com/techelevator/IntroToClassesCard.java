@@ -3,6 +3,7 @@ package com.techelevator;
 public class IntroToClassesCard {
 	
 	//*****************************************************************************
+	// This is the application program where the processing starts for our app
 	// main() is the starting method of all applications
 	//
 	// The class that contains main() is the application

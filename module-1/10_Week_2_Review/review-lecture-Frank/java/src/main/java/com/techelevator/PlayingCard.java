@@ -16,7 +16,8 @@ package com.techelevator;
 	 */
 
 
-public class PlayingCard {
+public class
+	PlayingCard {
 	/*********************************************************************************************
 	 * static - means there is only copy - shared by all objects
 	 * 
