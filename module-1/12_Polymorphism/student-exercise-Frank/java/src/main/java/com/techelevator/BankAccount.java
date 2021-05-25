@@ -30,6 +30,16 @@ public class BankAccount implements Accountable{
         return balance;
     }
 
+    //get money from one account, withdraw it
+    // move the money and deposit to a different account
+    //fromAcct.transferTo(toAcct,amt)
+    public int transferTo(BankAccount toAcct,int amt) {
+        // withdraw amt from (from acct)
+        this.withdraw(amt);    // going to withdraw from the acct in front of the dot
+        //deposit amt into to acct
+        toAcct.deposit(amt);
+        return balance;
+    }
     // Update the balance by using the DollarAmount.Plus method
     public int deposit(int amountToDeposit) {
         balance = balance + amountToDeposit;

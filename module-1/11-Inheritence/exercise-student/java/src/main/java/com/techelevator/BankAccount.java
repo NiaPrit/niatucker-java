@@ -5,8 +5,7 @@ public class BankAccount {
   private String accountHolderName;
   private String accountNumber;
   private int    balance;
-
-  // methods
+//Methods
     public int deposit(int amountToDeposit) {
         balance = amountToDeposit + balance;
         return balance;
