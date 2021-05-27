@@ -33,6 +33,7 @@ public class BankAccount implements Accountable{
     //get money from one account, withdraw it
     // move the money and deposit to a different account
     //fromAcct.transferTo(toAcct,amt)
+
     public int transferTo(BankAccount toAcct,int amt) {
         // withdraw amt from (from acct)
         this.withdraw(amt);    // going to withdraw from the acct in front of the dot
