@@ -18,19 +18,7 @@ public class BankCustomer {
 // add vip method when a customers combined balance is least 25,000\
 // if customer as debt (cc) minus the debt the account balance has to be atleast 25,00
 
-public void addAccount(Accountable newAccount) {
-    accounts.add(newAccount);
-}
-public boolean isVip() {
-    int totalbalance = 0;
-    for (int i = 0; i < accounts.size(); i++) {
-        totalbalance = totalbalance + accounts.get(i).getBalance();
-    }
-    if (totalbalance >= 25000) {
-        return true;
-    }
-    return false;
-}
+
 
 //getters&setters
     public String getName() {
@@ -57,9 +45,23 @@ public boolean isVip() {
         this.phoneNumber = phoneNumber;
     }
 
-    public Accountable[]  getAccounts() {
-        return accounts.toArray(new Accountable[accounts.size()]);
+    public Object[]  getAccounts() {
+        return accounts.toArray();
 
+    }
+    public void addAccount(Accountable newAccount) {
+        accounts.add(newAccount);
+    }
+
+    public boolean isVip() {
+        int totalbalance = 0;
+        for (int i = 0; i < accounts.size(); i++) {
+            totalbalance = totalbalance + accounts.get(i).getBalance();
+        }
+        if (totalbalance >= 25000) {
+            return true;
+        }
+        return false;
     }
 
 }

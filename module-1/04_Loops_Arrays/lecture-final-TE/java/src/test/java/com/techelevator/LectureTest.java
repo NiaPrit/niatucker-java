@@ -10,6 +10,7 @@ public class LectureTest {
     Lecture exercises = new Lecture();
 
     @Test
+    // arrange, act and assert are combined in one statements
     public void testReturnArray() {
         assertArrayEquals(new int[] { 80, 8080, 443 }, exercises.returnArray());
     }

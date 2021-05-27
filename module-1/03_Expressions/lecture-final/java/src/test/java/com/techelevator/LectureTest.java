@@ -9,16 +9,22 @@ import static org.junit.Assert.*;
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LectureTest {
-
+    //Instantiate an object for the code you are testing
     private Lecture exercises = new Lecture();
 
+
     @Test
+    //                                                       object with code.method to test(parameters)
     public void testReturnNotOne() {
         assertNotEquals("Value returned shouldn't be one", 1, exercises.returnNotOne());
     }
 
     @Test
     public void testReturnNotHalf() {
+        // Because a double value may Lose precision when referenced
+        //      A fudge factor is specified when checking double value to allow for the imprecision
+        //      that might occur : (.001) as long as the value is +/- .001 its ok
+        //                                                                              Fudge Factor
         assertNotEquals("Value returned shouldn't be 0.5", 0.5, exercises.returnNotHalf(), 0.001);
     }
 

@@ -23,7 +23,7 @@ public class LectureTest {
 	/* If a method is annotated with @Before, it will be executed immediately prior to every test.
 	 * It is intended to be used when there is a repetitive setup (i.e. "Arrange") task that is
 	 * performed by several tests */
-	@Before
+	@Before // DO THIS BEFORE EVERYTEST
 	public void setup() {
 		System.out.println("setup");
 	}
@@ -34,7 +34,8 @@ public class LectureTest {
 	@After
 	public void teardown() {
 		System.out.println("teardown");
-	}
+	} // method that holds all your processing after every test
+																// the name can be anything you want DESCRIPTIVE
 
 	/* Each test is implemented as a method with the @Test annotation. When the JUnit
 	 * framework is invoked, it looks for these @Test annotations on the test class
@@ -56,17 +57,20 @@ public class LectureTest {
 	 *     - are public
 	 *     - return void
 	 *     - take no arguments
+	 * Test rarely, if ever, contain user interactions - NO scanner or system.out.println()
 	 */
-	@Test
+
+	@Test // MUST BE BEFORE EVERY TEST - if not JUnit does not see the test
 	public void length_returns_the_number_of_characters_in_a_String() {
 		System.out.println("length_returns_the_number_of_characters_in_a_String"); // FOR DEMONSTRATION PURPOSES ONLY, don't do this in your own tests
 
 		/* The assertEquals method validates that two values are equal and
 		 * fails the test if they are not equal */
 
-		String theString = "Java"; // Arrange
-		int length = theString.length(); // Act
-		Assert.assertEquals(4, length); // Assert
+		String theString = "Java"; // Arrange - define the input data for the test
+		int length = theString.length(); // Act - run the method with the test data
+		//            	expected, actual
+		Assert.assertEquals(4, length); // Assert - verify the result from the Act was the expected results
 	}
 
 	@Test
@@ -76,7 +80,7 @@ public class LectureTest {
 		/* The assertTrue method validates that the boolean value provided as an arugment
 		 * is true and fails the test if it is false. */
 
-		String theString = "Hello World!"; // Arrange
+		String theString = "Hello World!";						 // Arrange
 		boolean startsWithHello = theString.startsWith("Hello"); // Act
 
 		/* every assert method allows the first parameter to be a String that contains a message
@@ -85,6 +89,8 @@ public class LectureTest {
 		 * This is particularly helpful with assertTrue as otherwise the failure output would simply
 		 * state "Expected: true Actual: false", which sometimes isn't much help in figuring out
 		 * what went wrong */
+		// Do Not specify an expected result it's obvious assertTrue expects true
+		//						error message if test fails
 		Assert.assertTrue("String did not start with Hello as expected.", startsWithHello); // Assert
 	}
 
