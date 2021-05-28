@@ -13,8 +13,14 @@ public class PlayingCard {
 	 * static so it can be referenced using the class name. ie. no object required
 	 * 
 	 * enum - define a set of constant values that may be referenced as a data type
+	 * allows the assign of a word to a constant value to limit the values in a variable
+	 * make it easier to code ( get rid using "magic" number to represent data
+	 * used as data-types - define variable as enums, parameters as enum- anywhere a variable is allowed
+	 * Java will ensure that en enum type only has values valid for them enum ( we dont have to check)
+	 * Enums are actually integer values starting at 0
 	 ***************************************************************************************************/
-	public static enum CardColor {          
+	public static enum CardColor {      // define words to represent allowable card colors (instead of String)
+										// these are the only valid values Java will allow
 		BLACK, RED                         
 	};
 
@@ -95,6 +101,12 @@ public class PlayingCard {
 	 * setter methods
 	 ***************************************************************************************************/
 	public CardValue setValue(int ivalue) {  // Set the CardValue based on an int value
+		/* swich is alternate to a set of nested if-then-else-if statemens
+		switch is followed by a series of cas statements which are the value you want to check in the variable
+		switch variable ( check the value in this variable
+		case value - if the value for the switch equals the case value
+		statements to run if value in the case matches the on in the switch
+		 */
 		switch (ivalue) {
 		case 1:
 			return CardValue.ONE;

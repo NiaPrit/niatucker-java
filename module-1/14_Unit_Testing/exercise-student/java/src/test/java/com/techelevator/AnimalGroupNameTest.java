@@ -33,4 +33,12 @@ public class AnimalGroupNameTest {
     String actualGroupName = theCode.getHerd(anAnimal);  //Act     - run the method with the test and get the result
     assertEquals("Tower", actualGroupName);              //Assert  -verify the result is what was expected
     }
+
+@Test
+    public void test_name_is_an_empty_String() {
+        String anAnimal = "";
+        String actualGroupName = theCode.getHerd(anAnimal);
+        assertEquals("unknown", actualGroupName);
+}
+
 }
