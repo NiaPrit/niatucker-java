@@ -24,5 +24,13 @@ public class CigarPartyTest {
         CigarParty exercise = new CigarParty();
         assertEquals(false,exercise.haveParty(39,false));
     }
+
+    @Test
+    public void test_party_is_not_successful_on_the_weekend(){
+        CigarParty exercise = new CigarParty();
+        assertEquals(false,exercise.haveParty(19,true));
+    }
+    
+
 }
 
