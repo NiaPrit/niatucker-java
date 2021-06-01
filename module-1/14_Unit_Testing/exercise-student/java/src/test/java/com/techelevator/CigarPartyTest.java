@@ -30,7 +30,7 @@ public class CigarPartyTest {
         CigarParty exercise = new CigarParty();
         assertEquals(false,exercise.haveParty(19,true));
     }
-    
+
 
 }
 
