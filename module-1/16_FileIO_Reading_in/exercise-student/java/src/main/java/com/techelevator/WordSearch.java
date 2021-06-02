@@ -13,18 +13,27 @@ public class WordSearch { //start of class
 		String path = userInput.nextLine();                                // allows user to type in the info and display on the next line
 		File inputFile = inputFile = new File(path);                    // telling compiler
 		System.out.println("What word are you looking for?"); // asking user what word they are looking for within the alice txt
-		String searchWord = userInput.nextLine();            // allows user to type SPECIFIC word we are looking for
-		System.out.println("Should the search word be case sensitive? Yes or No"); 
+		String searchWord = userInput.nextLine();          // allows user to type SPECIFIC word we are looking for
+		System.out.println("Should the search word be case sensitive? Yes or No");
 		String caseSensitive = userInput.nextLine();
 		int lineNumber = 1;                            //declaring lineNumber which will show the line number of desired word
-		Scanner inputScanner = new Scanner(inputFile.getAbsoluteFile());
+		Scanner inputScanner = new Scanner(inputFile);
 		{
 			while (inputScanner.hasNextLine()) {                        // looping through while there are lines in the text
-				String line = inputScanner.nextLine();                 //
-				if (line.contains(searchWord)) {					// if line contains the search word pull it out
-					System.out.println(lineNumber + ") " + line);  // print out the search word (dog) along with the line number it is on
+				String line = inputScanner.nextLine();
+				if (caseSensitive.equals("No")){
+					if (line.toUpperCase().contains(searchWord.toUpperCase())) {					// if line contains the search word pull it out
+						System.out.println(lineNumber + ") " + line);// print out the search word (dog) along with the line number it is on
+					}
+					lineNumber = lineNumber +1;
 				}
-				lineNumber += 1;
+				if (caseSensitive.equals("Yes")) {
+
+					if (line.contains(searchWord)) {                    // if line contains the search word pull it out
+						System.out.println(lineNumber + ") " + line);// print out the search word (dog) along with the line number it is on
+					}
+					lineNumber = lineNumber +1;
+				}
 			}
 
 		}
