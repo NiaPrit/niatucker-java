@@ -1,4 +1,80 @@
+-- Keys, Joins and Unions
+--
+-- Primary Key - a column or set of columns that uniquely identify a row in a table (Parent table)
+-- Foreigh Key - a column or set of columns that match the primary key of another table (Dependent table)
+--
+-- Natural Key - Value(s) that exist for a table that can be used as primary keys
+-- Surrogate Key - Artificially generated keys to use as a primary key
+--
+--  Joins are used when columns from multiple tables are required in a query
+--
+-- INNER JOIN - Matching rows between tables 
+-- 
+-- OUTER JOIN - All rows from both tables - the full set      
+------------------------------------------------------------------------------------------------
+-- Inner Join syntax - 2 forms
+-- 
+--  SELECT columns
+--    FROM table1, table2  
+--  WHERE table1.column = table2.column  
+--
+-- If you omit join conditions the result is Cartersian Product
+--    each from one table with each row in the other - IT'S NOT A JOIN
+--
+-- minimum # conditions on WHERE = # tables - 1
+--
+--  SELECT columns
+--    FROM table1
+--         INNER JOIN
+--         table2
+--      on table1.column = table2.column
+--
+-- Additional WHERE predicates may be added to either syntax to filter rows
+------------------------------------------------------------------------------------------------
+-- -- OUTER JOIN syntax 
+--
+--  SELECT columns
+--    FROM table1
+--         FULL OUTER JOIN
+--         table2
+--      on table1.column = table2.column
+--
+-- Additional WHERE predicates may be added to either syntax to filter rows
+------------------------------------------------------------------------------------------------
+-- UNION - Merging rows between two tables
+--
+-- Each SELECT must have the same number of columns in the same order and be compatible datatypes 
+--      use literals if necessary to make the UNION work
+--
+-- SELECT columns
+--   FROM table1
+-- WHERE predicate
+--
+-- UNION
+--
+-- SELECT columns
+--   FROM table2
+-- WHERE predicate
+------------------------------------------------------------------------------------------------
+--
+-- UNION All - Concatenating rows between two tables
+--
+-- Each SELECT must have the same number of columns in the same order and be compatible datatypes 
+--      use literals if necessary to make the UNION work
+--
+-- SELECT columns
+--   FROM table1
+-- WHERE predicate
+--
+-- UNION ALL
+--
+-- SELECT columns
+--   FROM table2
+-- WHERE predicate
+------------------------------------------------------------------------------------------------
 -- ********* INNER JOIN ***********
+
+-- Show the last_name of all the actors in the movie FINDING ANACONDA
 
 -- Let's find out who made payment 16666:
 
