@@ -4,7 +4,10 @@
 -- Show the names of the countries that speak English
 --
 
-
+select name
+from country
+where code In(select countrycode from countrylanguage where language = 'English')
+;
 
 
 
@@ -38,12 +41,21 @@ insert into actor (first_name, last_name) values('Joiny', 'McJoinJoin');
 --
 --  2a. Problem solved with sub-query
 --
-
+select actor_id
+from actor
+where actor_id not in(select actor_id
+                        from film_actor)
+;
 
 
 --
 -- 2b. Problem solved with left-join actor table to file_actor table
 --
+select actor_id, first_name, last_name
+from actor
+left join film_actor
+on actor.actor_id = film_actor.actor_id
+where film_actor.actor_id is null
 
 
 

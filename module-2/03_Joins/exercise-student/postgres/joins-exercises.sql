@@ -141,16 +141,16 @@ and release_year = '2006'
  --we want to see the titles of the films starring Nick Stallone that are in the action category
 --film , actor and category are the 3 tables that have our data they are not connected by film_category and film_actor do
 
-select first_name, last_name, title
-from film
-inner join film_category
-on film_category.film_id = film.film_id
-inner join film_category
-on film_category.category_id = category.category_id
+select title, first_name, last_name
+from actor
 inner join film_actor
-on film_actor.actor_id = actor.actor_id
-inner join film_actor
-on film_actor.film_id = film.film_id
+on actor.actor_id = film_actor.actor_id 
+inner join film 
+on film.film_id = film_actor.film_id
+inner join film_category
+on film.film_id = film_category.film_id
+inner join category
+on category.category_id = film_category.category_id
 where name = 'Action'
 and first_name = 'NICK'
 and last_name = 'STALLONE'
