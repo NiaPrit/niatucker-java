@@ -1,5 +1,0 @@
---
--- Subquery Example -----------------------------------------------------------------------------------------------
---
--- Show the names of the countries that speak English
---

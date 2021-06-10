@@ -1,4 +1,18 @@
 --
+-- Subquery Example -----------------------------------------------------------------------------------------------
+--
+-- Show the names of the countries that speak English
+--
+
+
+
+
+
+
+
+
+
+--
 -- Show any actors we have in the actor table who are not in any films
 -- in the film table (ie. no entry in the film_actor table)
 
