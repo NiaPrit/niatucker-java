@@ -64,4 +64,35 @@
 --      ALTER TABLE IF EXISTS table-name RENAME TO new-table-name  - Successful if table exists or not
 --
 ---------------------------------------------------------------------------------------------------------------
+Begin transaction;
+--drop any exisiting copies of the tables we are creating
+drop table if exists artist;
+drop table if exists painting;
+
+create table artist                                  -- table names are usually singular
+(artistId serial NOT NULL,                          --artistId unique ID for an artist| serial means postgres will generate a unique int value 
+artistname character varying(50),                   --name of the artist | char varying alls for varible size names
+                                                       
+
+Constraint pk_artist_artist_id Primary Key (artistId)
+
+)
+;                                                   
+
+
+-- Painting Table
+
+create table painting
+(paintingID serial not null,
+paintingTitile character varying(100)not null,
+purchasePrice decimal(12,2),
+constraint pk_painting_paintingId Primary Key(paintingId)
+)
+;
+
+
+
+
+rollback;
+
 
