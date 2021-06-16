@@ -2,7 +2,8 @@ package com.techelevator.projects.model;
 
 import java.util.List;
 
-public interface DepartmentDAO {
+public interface
+DepartmentDAO {
 
 	/**
 	 * Get all departments from the data store.

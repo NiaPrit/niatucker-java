@@ -53,6 +53,14 @@ public class DAOExampleApplicationProgram {
 
 		System.out.println("\ntheCity City object retrieved from the database: " + theCity);
 
+
+
+
+
+
+
+
+
 		/* Leave this commented out until Frank tells you to de-comment it
 
 		System.out.println("\n"+"-".repeat(40) + "\n" + "Rental Table Access" + "\n" + "-".repeat(40));

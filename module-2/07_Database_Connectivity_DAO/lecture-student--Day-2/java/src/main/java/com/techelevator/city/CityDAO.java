@@ -1,6 +1,6 @@
 package com.techelevator.city;  // same package as the POJO
 
-// DAO INterface for table we want to access
+// DAO Interface for table we want to access
 
 import java.util.List;
 
