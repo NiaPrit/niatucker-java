@@ -6,6 +6,11 @@ Implement integration tests for the `JDBCDepartmentDAO`, `JDBCEmployeeDAO`, and 
 
 Be sure to clean up any test data so that the database is returned to its original state after the test is completed.
 
+You will need to create a new package in `src/test/java` called `com.techelevator.model.jdbc`.
+You should create a new class in that package called `JDBCtablenameDAOIntegrationTest` for each JDBCDAO you are testing.
+
+Your tests will be coded in the `JDBCtablenameDAOIntegrationTest` class
+
 ### Hints: ### 
 1. Look at the methods required by the DAO Interface.  
 2. Determine what they are supposed to do, return and receive.
