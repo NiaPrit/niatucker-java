@@ -4,10 +4,10 @@ import java.time.LocalDate;
 
 public class Project {
     //instance variables
-private long projectId;
+private Long projectId;
 private String name;
-private String fromDate;
-private String toDate;
+private LocalDate fromDate;
+private LocalDate toDate;
 
 //toString() only return the department name
 
@@ -18,11 +18,11 @@ private String toDate;
                 '}';
     }
 //getters&setters
-    public long getProjectId() {
+    public Long getProjectId() {
         return projectId;
     }
 
-    public void setProjectId(long projectId) {
+    public void setProjectId(Long projectId) {
         this.projectId = projectId;
     }
 
@@ -34,19 +34,19 @@ private String toDate;
         this.name = name;
     }
 
-    public String getFromDate() {
+    public LocalDate getFromDate() {
         return fromDate;
     }
 
-    public void setFromDate(String fromDate) {
+    public void setFromDate(LocalDate fromDate) {
         this.fromDate = fromDate;
     }
 
-    public String getToDate() {
+    public LocalDate getToDate() {
         return toDate;
     }
 
-    public void setToDate(String toDate) {
+    public void setToDate(LocalDate toDate) {
         this.toDate = toDate;
     }
 

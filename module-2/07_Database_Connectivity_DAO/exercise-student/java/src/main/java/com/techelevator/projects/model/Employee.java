@@ -4,13 +4,13 @@ import java.time.LocalDate;
 
 public class Employee {
 //instance variables
-private long employeeId;
-private long departmentId;
+private Long employeeId;
+private Long departmentId;
 private String firstName;
 private String lastName;
 private String gender;
-private String birthDate;
-private String hireDate;
+private LocalDate birthDate;
+private LocalDate hireDate;
 
 
 //toString() only return employee last name and first name
@@ -25,19 +25,19 @@ private String hireDate;
 
 //getters and setters
 
-    public long getEmployeeId() {
+    public Long getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(long employeeId) {
+    public void setEmployeeId(Long employeeId) {
         this.employeeId = employeeId;
     }
 
-    public long getDepartmentId() {
+    public Long getDepartmentId() {
         return departmentId;
     }
 
-    public void setDepartmentId(long departmentId) {
+    public void setDepartmentId(Long departmentId) {
         this.departmentId = departmentId;
     }
 
@@ -65,19 +65,19 @@ private String hireDate;
         this.gender = gender;
     }
 
-    public String getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
-    public String getHireDate() {
+    public LocalDate getHireDate() {
         return hireDate;
     }
 
-    public void setHireDate(String hireDate) {
+    public void setHireDate(LocalDate hireDate) {
         this.hireDate = hireDate;
     }
 

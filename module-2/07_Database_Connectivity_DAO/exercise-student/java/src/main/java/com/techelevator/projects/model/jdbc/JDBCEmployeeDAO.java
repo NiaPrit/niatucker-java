@@ -5,10 +5,12 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import com.techelevator.projects.model.Department;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.techelevator.projects.model.Employee;
 import com.techelevator.projects.model.EmployeeDAO;
+import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 public class JDBCEmployeeDAO implements EmployeeDAO {
 
@@ -17,10 +19,22 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 	public JDBCEmployeeDAO(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
+
+
+
 	
 	@Override
 	public List<Employee> getAllEmployees() {
-		return new ArrayList<>();
+		List<Employee> allEmployees = new ArrayList<>();
+
+		String selectAllEmployees = "Select * from employee";
+
+		SqlRowSet allEmployeeRows = jdbcTemplate.queryForRowSet(selectAllEmployees);
+		while(allEmployeeRows.next()) {
+			allEmployees.add(mapRowToEmployee(allEmployeeRows));
+		}
+
+		return allEmployees;
 	}
 
 	@Override
@@ -47,5 +61,15 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 	public void changeEmployeeDepartment(Long employeeId, Long departmentId) {
 		
 	}
+
+	private Employee mapRowToEmployee(SqlRowSet results) {
+		Employee theEmployee = new Employee();
+
+		theEmployee.setEmployeeId(results.getLong("employee_id"));
+		theEmployee.setFirstName(results.getString("first_name"));
+		theEmployee.setLastName(results.getString("last_name"));
+		return theEmployee;
+	}
+
 
 }

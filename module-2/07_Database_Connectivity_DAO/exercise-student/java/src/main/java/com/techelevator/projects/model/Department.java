@@ -3,7 +3,7 @@ package com.techelevator.projects.model;
 public class Department {
 //instance variables
 
-private long departmentId;
+private Long departmentId;
 private String name;
 
 //toString return ONLY the project name
@@ -17,11 +17,11 @@ private String name;
 
 //getters and setters
 
-    public long getDepartmentId() {
+    public Long getDepartmentId() {
         return departmentId;
     }
 
-    public void setDepartmentId(long departmentId) {
+    public void setDepartmentId(Long departmentId) {
         this.departmentId = departmentId;
     }
 
