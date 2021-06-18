@@ -33,37 +33,66 @@ public class JDBCDepartmentDAO implements DepartmentDAO {
 	SqlRowSet allDepartmentRows = jdbcTemplate.queryForRowSet(selectAllDepartments);
 	while(allDepartmentRows.next()) {
 		allDepartments.add(mapRowToDepartment(allDepartmentRows));
-
+	}
+	return allDepartments;
 	}
 
-		return allDepartments;
-	}
 
 	@Override
 	public List<Department> searchDepartmentsByName(String nameSearch) {
+		List<Department> searchDepartmentsByName = new ArrayList<>();
 
+		String sqlSearchDepartmentByName = "Select * from department " +
+				" where name ilike " +
+				" ?";
 
+		SqlRowSet searchDepartmentByNameRows = jdbcTemplate.queryForRowSet(sqlSearchDepartmentByName, nameSearch);
 
-		return new ArrayList<>();
+		while(searchDepartmentByNameRows.next()) {
+			searchDepartmentsByName.add(mapRowToDepartment(searchDepartmentByNameRows));
+		}
+		return searchDepartmentsByName;
 	}
-
 
 
 
 
 	@Override
 	public void saveDepartment(Department updatedDepartment) {
-		
+		String updateStatement = "update department " +
+				"set name = ? " +
+				"where department_id = ?";
+		jdbcTemplate.update(updateStatement, updatedDepartment.getName(), updatedDepartment.getDepartmentId());
 	}
+
 
 	@Override
 	public Department createDepartment(Department newDepartment) {
-		return null;
+	String newDept = "insert into department(name) " +
+					 "values (?)";
+	newDepartment.setDepartmentId(getNextId());
+	jdbcTemplate.update(newDept, newDepartment.getName());
+
+		return newDepartment;
 	}
+
 
 	@Override
 	public Department getDepartmentById(Long id) {
-		return null;
+		Department wantedDepartment = null;
+		String searchDepartmentId = "select * " + "from department " +
+				"where id = ?";
+		return wantedDepartment;
+	}
+
+
+	private long getNextId() {
+		SqlRowSet nextId = jdbcTemplate.queryForRowSet("select nextval('seq_department_id')");
+		if(nextId.next()) {
+			return nextId.getLong(1);
+		} else{
+			throw new RuntimeException("No more Departments");
+		}
 	}
 
 	private Department mapRowToDepartment(SqlRowSet results) {
