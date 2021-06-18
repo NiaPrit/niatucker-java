@@ -41,13 +41,13 @@ public class JDBCProjectDAO implements ProjectDAO {
 	}
 
 
-	private Project mapRowToProject(SqlRowSet results) {
-		Project theProject = new Project();
+	//private Project mapRowToProject(SqlRowSet results) {
+		//Project theProject = new Project();
 
-		theProject.setProjectId(results.getLong("project_id"));
-		theProject.setName(results.getString("name"));
-		theProject.setFromDate(results.get("from_date"));
-		return theProject;
-	}
+		//theProject.setProjectId(results.getLong("project_id"));
+		//theProject.setName(results.getString("name"));
+		//theProject.setFromDate(results.get("from_date"));
+		//return theProject;
+	//}
 
 }

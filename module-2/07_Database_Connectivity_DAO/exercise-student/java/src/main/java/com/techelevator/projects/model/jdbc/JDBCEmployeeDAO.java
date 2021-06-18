@@ -41,10 +41,10 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 	public List<Employee> searchEmployeesByName(String firstNameSearch, String lastNameSearch) {
 		List<Employee> searchEmployeesByName = new ArrayList<>();
 
-		String sqlSearchEmployeesByName = "Select * from employee " +
-				" where name ilike " +
-				" ?" +
-				" ?";
+		String sqlSearchEmployeesByName = "SELECT * " +
+				                          "FROM employee " +
+										  "WHERE first_name ilike ? " +
+				                          "and last_name ilike ?";
 
 		SqlRowSet searchEmployeesByNameRows = jdbcTemplate.queryForRowSet(sqlSearchEmployeesByName, firstNameSearch, lastNameSearch );
 
@@ -56,11 +56,22 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 
 	@Override
 	public List<Employee> getEmployeesByDepartmentId(long id) {
-		return new ArrayList<>();
+
+		List<Employee> employeesById = new ArrayList<>();
+
+		String sqlGetEmployeesById = "Select * " +
+									"FROM employee " +
+									"WHERE department_id = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetEmployeesById,employeesById);
+		if(results.next()) {
+			employeesById = (List<Employee>) mapRowToEmployee(results);
+		}
+		return employeesById;
 	}
 
 	@Override
 	public List<Employee> getEmployeesWithoutProjects() {
+		
 		return new ArrayList<>();
 	}
 
