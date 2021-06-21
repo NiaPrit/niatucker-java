@@ -85,6 +85,8 @@ public class JDBCDepartmentDAO implements DepartmentDAO {
 		return wantedDepartment;
 	}
 
+
+
 // helper methods
 	private long getNextId() {
 		SqlRowSet nextId = jdbcTemplate.queryForRowSet("select nextval('seq_department_id')");

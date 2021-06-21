@@ -17,7 +17,7 @@ public class SQLInjectExample {
 //  |   users table      |
 //  |--------------------|
 //  | userid | password  |
-//  |--------------------|
+//  |--------------------|A
 //  | Vinny  | mycousin  |
 //  |--------------------|
 //  | Vito   | godfather |
@@ -31,7 +31,7 @@ public class SQLInjectExample {
 // Define data source                                              
 		@SuppressWarnings("resource")
 		BasicDataSource userLoginSource = new BasicDataSource();
-		userLoginSource.setUrl("jdbc:postgresql://localhost:5432/userlogin");
+		userLoginSource.setUrl("jdbc:postgresql://localhost:5432/review10");
 		userLoginSource.setUsername("postgres");
 		userLoginSource.setPassword("postgres1");
 

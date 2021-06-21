@@ -71,7 +71,7 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 
 	@Override
 	public List<Employee> getEmployeesWithoutProjects() {
-		
+
 		return new ArrayList<>();
 	}
 
