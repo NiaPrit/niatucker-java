@@ -36,7 +36,7 @@ public class HotelService {
    * Updates an existing reservation by replacing the old one with a new
    * reservation
    *
-   * @param CSV
+   * @param newReservationString
    * @return
    */
   public Reservation updateReservation(String newReservationString) {
@@ -53,7 +53,11 @@ public class HotelService {
     // TODO: Implement method
   }
 
+  /******************************** */
   /* DON'T MODIFY ANY METHODS BELOW */
+  /* DON'T MODIFY ANY METHODS BELOW */
+  /* DON'T MODIFY ANY METHODS BELOW */
+  /******************************** */
 
   /**
    * List all hotels in the system
