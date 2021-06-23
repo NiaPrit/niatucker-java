@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+
+//@requestmapping B4 the Controller class
+//set the default base path for all paths specified in other @requestmapping
 @RequestMapping("/auctions")
 public class AuctionController {
 

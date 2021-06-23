@@ -1,5 +1,6 @@
 package com.techelevator.services;
 
+import com.techelevator.auction;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -7,7 +8,6 @@ import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestClientResponseException;
 import org.springframework.web.client.RestTemplate;
 
-import com.techelevator.models.Auction;
 
 public class AuctionService {
 

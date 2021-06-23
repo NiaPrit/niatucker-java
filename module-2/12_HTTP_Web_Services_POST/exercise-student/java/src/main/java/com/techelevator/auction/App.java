@@ -1,4 +1,4 @@
-package com.techelevator.auction;
+package com.techelevator.models;
 
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestClientResponseException;
