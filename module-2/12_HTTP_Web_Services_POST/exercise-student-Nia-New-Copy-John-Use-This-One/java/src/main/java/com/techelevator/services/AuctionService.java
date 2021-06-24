@@ -99,6 +99,9 @@ public class AuctionService {
         } catch(RestClientResponseException exceptionObject) {
             console.printError(exceptionObject.getRawStatusCode() + ":" + exceptionObject.getStatusText());
             return null;
+        } catch(ResourceAccessException exceptionObject){
+            console.printError(exceptionObject.getMessage());
+            return null;
         }
         return updateAuction;
     }
@@ -109,6 +112,9 @@ public class AuctionService {
             restTemplate.delete(API_URL + "/" +id);
         } catch(RestClientResponseException exceptionObject) {
             console.printError(exceptionObject.getRawStatusCode() + ":" + exceptionObject.getStatusText());
+            return false;
+        }catch (ResourceAccessException exceptionObject) {
+            console.printError(exceptionObject.getMessage());
             return false;
         }
         return true;
