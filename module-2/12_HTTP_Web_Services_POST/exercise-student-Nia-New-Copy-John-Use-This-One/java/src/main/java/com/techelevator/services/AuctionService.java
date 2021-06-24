@@ -65,18 +65,53 @@ public class AuctionService {
     }
 
     public Auction add(String auctionString) {
-        // place code here
-        return null;
+        //place code here
+        Auction aAuction = makeAuction(auctionString);
+        if (aAuction == null) {
+            //  System.out.println("No Auction information added - cannot add auction");
+            return null;
+        }
+        HttpHeaders theHeaders = new HttpHeaders();
+        theHeaders.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity aRequest = new HttpEntity(aAuction, theHeaders);
+        try {
+            aAuction = restTemplate.postForObject(API_URL, aRequest, Auction.class);
+        } catch (RestClientResponseException exceptionObject) {
+            console.printError(exceptionObject.getRawStatusCode() + ":" + exceptionObject.getStatusText());
+            return null;
+        } catch (ResourceAccessException exceptionObject) {
+            console.printError(exceptionObject.getMessage());
+            return null;
+        }
+        return aAuction;
     }
+
 
     public Auction update(String auctionString) {
         // place code here
-        return null;
+        Auction updateAuction = makeAuction(auctionString);
+        HttpHeaders aHeader = new HttpHeaders();
+        aHeader.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity anEntity = new HttpEntity(updateAuction,aHeader);
+
+        try {
+            restTemplate.put(API_URL + "/" + updateAuction.getId(), anEntity);
+        } catch(RestClientResponseException exceptionObject) {
+            console.printError(exceptionObject.getRawStatusCode() + ":" + exceptionObject.getStatusText());
+            return null;
+        }
+        return updateAuction;
     }
 
     public boolean delete(int id) throws RestClientResponseException, ResourceAccessException {
         // place code here
-        return false;
+        try {
+            restTemplate.delete(API_URL + "/" +id);
+        } catch(RestClientResponseException exceptionObject) {
+            console.printError(exceptionObject.getRawStatusCode() + ":" + exceptionObject.getStatusText());
+            return false;
+        }
+        return true;
     }
 
     private HttpEntity<Auction> makeEntity(Auction auction) {

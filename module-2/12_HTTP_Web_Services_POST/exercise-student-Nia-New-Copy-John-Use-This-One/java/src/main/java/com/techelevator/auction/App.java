@@ -11,6 +11,7 @@ public class App {
 
     public static void main(String[] args) {
         int menuSelection;
+
         int auctionId = -1;
 
         ConsoleService consoleService = new ConsoleService();
