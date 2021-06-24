@@ -140,7 +140,7 @@ public class HotelController {
      ***************************************************************************************************/
     public void logAPICall(String message) {
         LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("mm/dd/yyyy HH:mm:ss.A");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss.A");
         String timeNow = now.format(formatter);
         System.out.println(timeNow + "-" + message);
     }

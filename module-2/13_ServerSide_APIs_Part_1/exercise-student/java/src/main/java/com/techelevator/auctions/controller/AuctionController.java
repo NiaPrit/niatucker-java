@@ -17,7 +17,13 @@ public class AuctionController {
     private AuctionDAO dao;
 
     public AuctionController() {
+
         this.dao = new MemoryAuctionDAO();
     }
-
+//controller  method here
+    @RequestMapping(path = "", method = RequestMethod.GET)
+    public List<Auction> list() {
+        System.out.println("List of Auctions");
+        return dao.list();
+    }
 }
