@@ -1,31 +1,13 @@
-package com.techelevator.reservations.models;
-
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
-// Validation annotations may be specified in the POJO
-// if we would like Spring Boot to validate our data before we process it
-//
-// @NotBlank - there must be data in the field
-// @Max      - Set the maximum value
-// @Min      - Set the minimu, value
+package com.techelevator.hotels.models;
 
 public class Reservation {
 
     private int id;
     private int hotelID;
     private String fullName;
-
-    @NotBlank
+    // Use LocalDate for dates but storing as a string to keep this example simple
     private String checkinDate;
-
-    @NotBlank
     private String checkoutDate;
-
-    @Min(value=1, message="We need at one guest for a reservation")
-    @Max(value=4, message="HEY JC! No wild parties!!!")
     private int guests;
 
     public Reservation() {
@@ -89,11 +71,17 @@ public class Reservation {
         this.guests = guests;
     }
 
+
     @Override
     public String toString() {
-        return "\n--------------------------------------------" + "\n Reservation Details"
-                + "\n--------------------------------------------" + "\n Id: " + id + "\n Hotel Id: " + hotelID
-                + "\n Full Name: " + fullName + "\n Checkin Date: " + checkinDate + "\n Checkout Date: " + checkoutDate
-                + "\n Guests: " + guests;
+        return "\n--------------------------------------------" +
+                "\n Reservation Details" +
+                "\n--------------------------------------------" +
+                "\n Id: " + id +
+                "\n Hotel Id: " + hotelID +
+                "\n Full Name: " + fullName +
+                "\n Checkin Date: " + checkinDate +
+                "\n Checkout Date: " + checkoutDate +
+                "\n Guests: " + guests;
     }
 }
