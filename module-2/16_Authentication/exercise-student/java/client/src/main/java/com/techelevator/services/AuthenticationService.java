@@ -25,6 +25,9 @@ public class AuthenticationService {
         ResponseEntity<Map> response = null;
         try {
         	// send login request here
+            // call the server/log in path with the request containing the LoginDTO
+            response = restTemplate.exchange(BASE_URL + "/login", HttpMethod.POST, entity, Map.class);
+
         } catch(RestClientResponseException ex) {
             if (ex.getRawStatusCode() == 401 && ex.getResponseBodyAsString().length() == 0) {
                 String message = ex.getRawStatusCode() + " : {\"timestamp\":\"" + LocalDateTime.now() + "+00:00\",\"status\":401,\"error\":\"Invalid credentials\",\"message\":\"Login failed: Invalid username or password\",\"path\":\"/login\"}";
