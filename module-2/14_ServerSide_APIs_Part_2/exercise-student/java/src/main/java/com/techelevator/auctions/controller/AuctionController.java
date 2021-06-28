@@ -56,7 +56,7 @@ public class AuctionController {
 
     @RequestMapping(path ="/{id}",method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteAuction(@Valid @PathVariable int id) throws AuctionNotFoundException {
+    public void delete(@Valid @PathVariable int id) throws AuctionNotFoundException {
         dao.delete(id);
     }
 
