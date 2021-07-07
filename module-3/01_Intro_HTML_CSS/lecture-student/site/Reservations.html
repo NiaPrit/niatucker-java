@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations Page</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <h1>Bits & Bytes</h1>  
+    <p>Welcome to the internet's best (non-Italian) restaurant</p>
+  
+  <nav> 
+  <a href="index.html">View Menu</a>
+  
+  </nav>
+  <main>
+      <h2>Reservation Form</h2>
+      <form method="POST" action="dummy-url-for-now">
+          <div>
+              <label for="reservationName">Name: </label>
+              <input id="reservationName" type="text"/>
+          </div>
+
+          <div> 
+              <label for="numberOfGuest">Number Of Guest</label>
+              <input id="numberOfGuest" type="number"/>
+          </div>
+
+          <div> 
+            <label for="reservationDate">Date</label>
+            <input id="reservationDate" type="date"/>
+        </div>
+
+        <div> 
+            <label for="reservationTime">Time</label>
+            <input id="reservationTime" type="time"/>
+        </div>
+
+        <div> 
+            <label for="isSpecialOccasion">Special Occasion?</label>
+            <input id="isSpecialOccasion" type="checkbox"/>
+        </div>
+
+        <div>
+            <input type="submit"/>
+        </div>
+
+      </form>
+  </main>
+  </body>
+</html>
