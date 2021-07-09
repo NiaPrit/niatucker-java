@@ -33,6 +33,8 @@ aside img {
 
 main{
   margin-left: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 aside li{
@@ -57,6 +59,8 @@ a:hover{
 }
 main {
   margin-left: 200px;
+  padding-left: 20px;
+  padding-right:20px
 }
 
 main header{
@@ -66,3 +70,28 @@ main header{
 main > header >img{
   height: 80%;
 }
+main > img{
+  width: 100% ;
+}
+body section div{
+  display: inline-block;
+  width: 33%;
+  vertical-align: top;
+  padding-right: 20px ;
+  margin-top: 20px;
+}
+
+  h2 {
+    color: #8CC36F;
+ }
+ h2 i{
+margin-right: 10px;
+ }
+
+ #our-work,#what-we-do{
+border-right: solid 1px rgba(170, 239, 135, 0.8);
+ }
+
+ #contact-us,#our-work{
+   padding-left: 20px;
+ }
