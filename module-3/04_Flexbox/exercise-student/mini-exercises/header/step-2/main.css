@@ -41,3 +41,10 @@ a:hover {
   color: #00AFEF;
   text-decoration: underline;
 }
+ul, header{
+  display: flex;
+}
+ul{
+  justify-content: center;
+
+}
