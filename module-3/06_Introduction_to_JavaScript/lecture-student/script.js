@@ -10,8 +10,25 @@
  */
 function variables() {
   // Declares a variable where the value cannot be changed
+  const daysPerWeek = 7;
+  console.log(`There are ${daysPerWeek} days in a week`)
+
   // Declares a variable those value can be changed
+  let daysPerMonth = 30;
+  console.log(`There are ${daysPerMonth} days in a Month`)
+
   // Declares a variable that will always be an array
+  const WEEKDAYS = [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+
+                  ]
+ console.table(WEEKDAYS)                 
 }
 
 /**
@@ -70,14 +87,23 @@ function objects() {
       "Milton Waddams",
       "Samir Nagheenanajar",
       "Michael Bolton"
-    ]
-  };
+    ],
 
+    toString : function(){
+      return `${this.firstName}, ${this.lastName}, ${this.age}`
+    }
+  };
+console.log(person.toString())
   // Log the object
+  console.log(person)
 
   // Log the first and last name
-
+console.log(`The person's first name: ${person.firstName} last name: ${person.lastName}`)
   // Log each employee
+
+  for(let i=0; i < person.employees.length; i++) {
+    console.log(`Employee #: ${i+1}: ${person.employees[i]}`)
+  }
 }
 
 /*

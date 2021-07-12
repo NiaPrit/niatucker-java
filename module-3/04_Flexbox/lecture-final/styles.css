@@ -119,8 +119,5 @@ section {
   #all-items>header {
     text-align: center;
   }
-  ul, header{
-    display: flex;
   
-  }
 }
