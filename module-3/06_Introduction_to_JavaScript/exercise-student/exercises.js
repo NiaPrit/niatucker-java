@@ -62,6 +62,15 @@
         seeColor("blueTimes") → "blue"
 */
 
+function seeColor(string){
+	if(string.startsWith("blue")){
+		return "blue"
+	}
+	if(string.startsWith("red")){
+		return "red"
+	}
+	return "";
+}	
 
 /*
 5. **oddOnly** Write a function that given an array of integer of any length, filters out 
@@ -70,8 +79,15 @@
 		oddOnly([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) → [1, 3, 5, 7, 9, 11];
 		oddOnly([2, 4, 8, 32, 256]); → []	
 */
-
-
+	function oddOnly(value) {
+	let result = []
+	for (let i=0; i < value.length; i++) {
+		if (value[i] % 2 === 1) {
+			result.push(value[i])
+		}
+	}
+return result;
+}
 /*
 6. **frontAgain** Given a string, return true if the first 2 chars in the string also appear 
     at the end of the string, such as with "edited".

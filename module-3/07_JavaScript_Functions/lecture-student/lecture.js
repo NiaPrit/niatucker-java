@@ -28,6 +28,10 @@ function printToConsole(value) {
  * @param {number} secondParameter the second parameter to multiply
  */
 
+function multiplyTogether(firstParameter, secondParameter){
+  return firstParameter * secondParameter;
+}
+
 /**
  * This version makes sure that no parameters are ever missing. If
  * someone calls this function without parameters, we default the
@@ -39,7 +43,9 @@ function printToConsole(value) {
  * @param {number} [secondParameter=0] the second parameter to multiply
  */
 
-
+function multiplyNoUndefined(firstParameter=0, secondParameter=0){
+  return firstParameter * secondParameter;
+}
  
 /**
  * Functions can return earlier before the end of the function. This could be useful
@@ -85,6 +91,8 @@ function scopeTest() {
   if (inScopeInScopeTest && scopedToBlock) {
     console.log("This won't print!");
   }
+
+  var baddyMcBad = "Dont ever use var!";
 }
 
 function createSentenceFromUser(name, age, listOfQuirks = [], separator = ', ') {
@@ -100,7 +108,10 @@ function createSentenceFromUser(name, age, listOfQuirks = [], separator = ', ') 
  * @returns {number} sum of all the numbers
  */
 function sumAllNumbers(numbersToSum) {
-  return numbersToSum.reduce();
+  return numbersToSum.reduce((sum, aNumber) => {
+    sum += aNumber;
+    return sum;
+  });
 }
 
 /**
