@@ -96,6 +96,16 @@ return result;
 		frontAgain("edit") → false
 		frontAgain("ed") → true
 */
+	function frontAgain(char){
+		let length = 2;
+		let begin = char.slice(0,2);
+		let end = char.slice(char.length - 2, char.length);
+		if(begin == end){
+		return true;
+		} else {
+			return false;
+		}
+		}
 
 /*
 7. **cigarParty** When squirrels get together for a party, they like to have cigars. 
@@ -108,6 +118,13 @@ or false otherwise.
 		cigarParty(50, false) → true
 		cigarParty(70, true) → true
 */
+	function cigarParty(num, weekend){
+		if((num > 39 && num < 61 && weekend == false )||(num > 39 && weekend == true)){
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 /*
 8. **fizzBuzz** Because you know you can't live without it, FizzBuzz.
@@ -128,6 +145,16 @@ or false otherwise.
 	filterEvens([100, 8, 21, 24, 62, 9, 7]) → [100, 8, 24, 62]
 */
 
+function filterEvens(value) {
+	let result = []
+	for (let i=0; i < value.length; i++) {
+		if (value[i] % 2 !=1) {
+			result.push(value[i])
+		}
+	}
+return result;
+}
+
 /*
 10. **filterBigNumbers** Write a function that filters numbers greater than or equal to 100.
 
@@ -143,6 +170,15 @@ parameter, `x` passed in.
 	filterMultiplesOfX([3, 5, 1, 9, 18, 21, 42, 67], 3) → [3, 9, 18, 21, 42]
 	filterMultiplesOfX([3, 5, 10, 20, 18, 21, 42, 67], 5) → [5, 10, 20]
 */
+function filterMultiplesOfX(a, b) {
+	let results = [];
+	for (let i =0;i<a.length;i++) {
+	if(a[i] % b === 0) {
+	results.push(a[i]);
+	}
+	}
+	return results;
+	}
 
 /*
 12. **createObject** Write a function that creates an object with a property called 
