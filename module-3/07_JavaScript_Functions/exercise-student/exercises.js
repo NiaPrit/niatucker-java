@@ -28,6 +28,9 @@
  * @returns {number[]} the filtered array
  */
 let unfilteredArray = [1, 2, 3, 4, 5, 6];
+function useParameterToFilterArray(filterFunction) {
+    return unfilteredArray.filter(filterFunction);
+  }
 
 /**
  * Write a function called makeNumber that takes two strings
@@ -49,7 +52,11 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @param {...number} num a series of numbers to add together
  * @returns {number} the sum of all the parameters (or arguments)
  */
-
+function addAll() {
+    return Array.from(arguments).reduce((sum, number) => {
+      return sum + number;
+    }, 0);
+  }
 /*
  * Write and document a function called makeHappy that takes
  * an array and prepends 'Happy ' to the beginning of all the

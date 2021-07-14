@@ -135,6 +135,17 @@ or false otherwise.
 		fizzBuzz(15) → "FizzBuzz"
 		fizzBuzz(8) → 8
 */
+function fizzBuzz(number) {
+	if (number % 5 === 0 && number % 3 === 0) {
+		return "FizzBuzz";
+	} else if (number % 3 === 0) {
+		return "Fizz"
+	} else if (number % 5 === 0) {
+		return "Buzz";
+	} else {
+		return number;
+	}
+}
 
 /*
 9. **filterEvens** Write a function that filters an array to only include even numbers.
@@ -162,7 +173,15 @@ return result;
 	filterBigNumbers([3, 2, 7, 1, -100, -120]) → []
 	filterBigNumbers([]) → []
 */
-
+function filterBigNumbers(value) {
+	let result = []
+	for (let i=0; i < value.length; i++) {
+		if (value[i] >= 100) {
+			result.push(value[i])
+		}
+	}
+return result;
+}
 /*
 11. **filterMultiplesOfX** Write a function to filter numbers that are a multiple of a 
 parameter, `x` passed in.
