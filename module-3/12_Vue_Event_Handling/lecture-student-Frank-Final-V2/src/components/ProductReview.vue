@@ -104,11 +104,11 @@
     <!-- Default behavior for the button click is to submit the form to a URL with an HTTP request -->
     <!-- we don't want to do that - we will add an evenet to FORM for a click so we can handle     -->
     <!-- disable submit button if form is not valid                                                -->
-    <button v-bind:disabled="!isFormValid">Submit</button>
+    <input type="submit" value="Save" v-bind:disabled="!isFormValid"/>
     
     <!-- define a Cancel button to hide the form and not add the new review to the application  -->
     <!-- stop the default button action (.prevent) state it's a cancel (not a submit button)    -->
-    <button v-on:click.prevent="resetForm()" type="cancel">Cancel</button>
+    <input type="button" value="Cancel" v-on:click.prevent="resetForm()" />
     </form>
 
     <!-- we coding a class "review" attribute for the div - class=                                                       -->
