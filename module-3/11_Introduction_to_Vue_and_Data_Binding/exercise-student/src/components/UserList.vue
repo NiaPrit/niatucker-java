@@ -23,7 +23,39 @@
           </select>
         </td>
       </tr>
+
+
       <!-- user listing goes here -->
+     <tr>
+      <td v-for="aList in users" v-bind:key="aList.id">
+        {{aList.firstName}}
+      </td>
+      </tr>
+
+      <tr>
+      <td v-for="aList in users" v-bind:key="aList.id">
+        {{aList.lastName}}
+      </td>
+      </tr>
+
+      <tr>
+      <td v-for="aList in users" v-bind:key="aList.id">
+        {{aList.username}}
+      </td>
+      </tr>
+
+      <tr>
+      <td v-for="aList in users" v-bind:key="aList.id">
+        {{aList.emailAddress}}
+      </td>
+      </tr>
+
+      <tr>
+      <td v-for="aList in users" v-bind:key="aList.id">
+        {{aList.status}}
+      </td>
+      </tr>
+
     </tbody>
   </table>
 </template>
