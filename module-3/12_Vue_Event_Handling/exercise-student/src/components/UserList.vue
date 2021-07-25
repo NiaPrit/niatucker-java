@@ -94,6 +94,11 @@ export default {
   name: "user-list",
   data() {
     return {
+
+      showForm: false,
+      selectedUserIDS : [],
+      boxChecked: false,
+
       filter: {
         firstName: "",
         lastName: "",
@@ -101,10 +106,7 @@ export default {
         emailAddress: "",
         status: ""
       },
-      showForm: false,
-      selectedUserIDS : [],
-      boxChecked: false,
-    
+      
       newUser: {
         id: null,
         firstName: "",
@@ -183,6 +185,12 @@ export default {
 
       }
     },
+
+  flipStatus(id) {
+          const user = this.users.find(u => u.id === id);
+          user.status = user.status === 'Active' ? 'Disabled' : 'Active';
+       },
+
     selectedList(id){
       this.users.forEach((user) =>{
         if (user.id === id){
@@ -225,6 +233,10 @@ export default {
 
   },
   computed: {
+    actionButtonDisabled() {
+      return (this.selctedUsersIDS == 0);
+    },
+    
     filteredList() {
       let filteredUsers = this.users;
       if (this.filter.firstName != "") {
