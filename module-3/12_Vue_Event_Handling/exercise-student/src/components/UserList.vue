@@ -53,7 +53,8 @@
           <td>{{ user.emailAddress }}</td>
           <td>{{ user.status }}</td>
           <td>
-            <button class="btnEnableDisable" v-on:click="flipStatus(user.id)">{{ user.status === 'Active' ? 'Disable' : 'Enable' }} </button>
+            <button class="btnEnableDisable"
+             v-on:click="flipStatus(user.id)">{{ user.status === 'Active' ? 'Disable' : 'Enable' }} </button>
           </td>
         </tr>
       </tbody>
@@ -236,7 +237,7 @@ export default {
     actionButtonDisabled() {
       return (this.selctedUsersIDS == 0);
     },
-    
+
     filteredList() {
       let filteredUsers = this.users;
       if (this.filter.firstName != "") {
