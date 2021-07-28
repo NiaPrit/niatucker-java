@@ -33,7 +33,11 @@ export default new Vuex.Store({
      ]
      
   },
-  mutations: {},
+  mutations: {
+  SET_READ_STATUS(state, book) {
+    book.read = !book.read;
+  }  
+  },
   actions: {},
   modules: {},
   strict: true

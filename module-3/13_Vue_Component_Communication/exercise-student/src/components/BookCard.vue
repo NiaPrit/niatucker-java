@@ -3,13 +3,25 @@
      <h2 class="book-title">{{book.title}}</h2>
      <img v-if="book.isbn" v-bind:src="'http://covers.openlibrary.org/b/isbn/' + book.isbn + '-M.jpg'"/>
      <h3 class="book-author">{{book.author}}</h3>
+     <div class="button-container">
+         <button v-bind:class="book-read === true?'Mark - unread' : 'mark-read'"
+         v-text="book.read === true ? 'Mark Unread' : 'Mark Read'"
+         v-on:click.prevent="flipRead()">Mark Read</button>
+
+  </div>
+  <button v-if="enableAdd" v-on:click.prevent="addToReadingList(book)">Add to Reading List</button>
   </div>
 </template>
 
 <script>
 export default {
     name: 'book-card',
-    props:['book']
+    props:['book'],
+    methods: {
+     flipRead() {
+       this.$store.commit('SET_READ_STATUS',this.book);
+     }
+    }
 }
 </script>
 
