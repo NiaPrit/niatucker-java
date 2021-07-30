@@ -1,44 +1,10 @@
 import axios from 'axios';
 const theHttp = axios.create({
- baseURL: "http://localhost:3000/"
+ baseURL: "http://localhost:8080/"
 });
 export default {
-    theTopics(){
-        return theHttp.get('/topics')
-    },
-
-   // get(id) {
-    //    return theHttp.get(/topics/${id})
-    //    }
-
-}
-and this for topicsList
-<template>
-  <div class="topic-list">
-    <div v-for="topic in topics" v-bind:key="topic.id" class="topic">
-      {{ topic.title }}
-    </div>
-  </div>
-</template>
-
-<script>
-import topicsService from "../services/topics"
-
-export default {
-  name: 'topic-list',
-  data() {
-    return {
-      topics: []
-    }
+  getTopics(){
+    return http.get('/topics');
   },
-  created() {
- topicsService.theTopics().then((response) => {
- this.topics = response.data;
- });
- 
- }
-
-
-
 }
-</script>
+   
