@@ -17,7 +17,7 @@ export default {
       topics: []
     }
   },
-  create(){
+  created(){
     topicService.list().then((response) =>{
       this.topics = response.data;
     })
