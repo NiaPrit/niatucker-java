@@ -1,6 +1,7 @@
 import axios from 'axios';
-const theHttp = axios.create({
- baseURL: "http://localhost:8080/"
+
+const http = axios.create({
+ baseURL: "http://localhost:8080"
 });
 export default {
   getTopics(){

@@ -8,7 +8,7 @@
 
 <script>
 
-import topicService from '@/services/TopicsService';
+import topicsService from '@/services/topicsService';
 
 export default {
   name: 'topic-list',
@@ -18,7 +18,7 @@ export default {
     }
   },
   created(){
-    topicService.list().then((response) =>{
+    topicsService.list().then((response) =>{
       this.topics = response.data;
     })
   }
